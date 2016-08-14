@@ -2,6 +2,11 @@
 <html lang="zh-Hans">
 <head>
 
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
@@ -42,6 +47,9 @@
     <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
 
 
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -168,18 +176,18 @@
                         
                             <li><a href="/tags/">标签云</a></li>
                         
-                            <li><a href="/about/">留言板</a></li>
-                        
                         </ul>
                     </nav>
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa GitHub" href="//github.com/Yukizzz" title="GitHub"></a>
-                            
                                 <a class="fa RSS" href="/atom.xml" title="RSS"></a>
                             
-                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                                <a class="fa GitHub" href="//github.com/Yukizzz" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="//www.zhihu.com/people/jiang-yu-zhu-41" title="知乎"></a>
+                            
+                                <a class="fa CSDN" href="//blog.csdn.net/yukizzz" title="CSDN"></a>
                             
                         </ul>
                     </nav>
@@ -199,6 +207,10 @@
                     
                       <a class="main-nav-link switch-friends-link" href="//taosama.github.io/">Taosamao</a>
                     
+                      <a class="main-nav-link switch-friends-link" href="//doldre.github.io/">luoxinchen</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://blog.csdn.net/jibancanyang/">JIBANCANYANG</a>
+                    
                     </div>
                 </section>
                 
@@ -207,7 +219,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">scu~Acmer~</div>
+                    <div id="js-aboutme">(*/ω＼*)SCU~Acmer~~~欢迎交流~~</div>
                 </section>
                 
             </div>
@@ -239,19 +251,19 @@
                 
                     <li><a href="/tags/">标签云</a></li>
                 
-                    <li><a href="/about/">留言板</a></li>
-                
                 <div class="clearfix"></div>
                 </ul>
             </nav>
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa GitHub" target="_blank" href="//github.com/Yukizzz" title="GitHub"></a>
-                            
                                 <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
                             
-                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                                <a class="fa GitHub" target="_blank" href="//github.com/Yukizzz" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="//www.zhihu.com/people/jiang-yu-zhu-41" title="知乎"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="//blog.csdn.net/yukizzz" title="CSDN"></a>
                             
                         </ul>
             </nav>
@@ -265,6 +277,15 @@
       <time datetime="2016-08-13T11:45:46.000Z" itemprop="datePublished">2016-08-13</time>
 </a>
 
+ 
+    <a href="/2016/08/13/hello/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" "></span>
+        
+        
+    </a>
 
     </div>
   
@@ -377,6 +398,62 @@
 
 
     
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/13/hello/" data-title="hello" data-url="https://yukizzz.github.io/2016/08/13/hello/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"yukizzz"};
+        function loadComment() {
+            var d = document, s = d.createElement('script');
+            s.src = '//moxfive.xyz/resources/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        $(function() { 
+            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/08/13/hello/&callback=?";
+            $.getJSON(jsonUrl, function(result) {
+                $.each(result.response, function(i, field) {
+                    var value = field.comments;
+                    if (value > 0) {
+                        $(".count-comment").text(value);
+                        return;
+                    }
+                })
+
+            })
+        });
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+
+    
 
 
 
@@ -420,6 +497,8 @@
 </footer>
     </div>
     
+    <script src="/js/GithubRepoWidget.js"></script>
+
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
     <script>
@@ -451,7 +530,7 @@
     // Open in New Window
     
         var oOpenInNew = {
-            
+             github: ".github-widget a", 
             
              post: ".article-entry a[href]", 
             
