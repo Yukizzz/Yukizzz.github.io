@@ -74,7 +74,7 @@
         isCategory: true,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: false
+        search: true
     }
 </script>
 
@@ -120,6 +120,13 @@
         <p class="header-subtitle">Perstare et praestare</p>
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="undefined" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -195,7 +202,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/">ACM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/">ACM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/物理/">物理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脑洞/">脑洞</a></li></ul>
                     </div>
                 </section>
                 
@@ -218,7 +225,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">(*/ω＼*)SCU~Acmer~~~欢迎交流~~</div>
+                    <div id="js-aboutme">(*/ω＼*)SCU~ACMer~</div>
                 </section>
                 
             </div>
