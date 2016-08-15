@@ -748,7 +748,7 @@ a {
 #header .switch-part2 {
   left: 100%;
   overflow-y: auto;
-  max-height: 260px;
+  max-height: 100px;
 }
 #header .switch-part3 {
   left: 200%;
