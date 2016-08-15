@@ -374,7 +374,7 @@
     <div id="comment-box" ></div>
     <div class="ds-thread" id="ds-thread" data-thread-key="categories/index.html" data-title="文章分类" data-url="https://yukizzz.github.io/categories/index.html"></div>
     <script>
-        var duoshuoQuery = {short_name:"MOxFIVE"};
+        var duoshuoQuery = {short_name:"yukizzz"};
         function loadComment() {
             var d = document, s = d.createElement('script');
             s.src = '//moxfive.xyz/resources/embed.js';
@@ -383,7 +383,7 @@
         }
 
         $(function() { 
-            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=MOxFIVE&threads=categories/index.html&callback=?";
+            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=categories/index.html&callback=?";
             $.getJSON(jsonUrl, function(result) {
                 $.each(result.response, function(i, field) {
                     var value = field.comments;
@@ -440,7 +440,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 4;
+                var backgroundnum = 2;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
