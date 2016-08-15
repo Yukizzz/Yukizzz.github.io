@@ -280,15 +280,6 @@
       <time datetime="2016-08-14T16:04:44.000Z" itemprop="datePublished">2016-08-15</time>
 </a>
 
- 
-    <a href="/2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count" "></span>
-        
-        
-    </a>
 
     </div>
   
@@ -414,7 +405,7 @@
     <div id="comment-box" ></div>
     <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/" data-title="HDU 5810 Balls and Boxes【期望，公式推导】" data-url="https://yukizzz.github.io/2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/"></div>
     <script>
-        var duoshuoQuery = {short_name:"yukizzz"};
+        var duoshuoQuery = {short_name:"MOxFIVE"};
         function loadComment() {
             var d = document, s = d.createElement('script');
             s.src = '//moxfive.xyz/resources/embed.js';
@@ -423,7 +414,7 @@
         }
 
         $(function() { 
-            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/&callback=?";
+            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=MOxFIVE&threads=2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/&callback=?";
             $.getJSON(jsonUrl, function(result) {
                 $.each(result.response, function(i, field) {
                     var value = field.comments;
@@ -437,31 +428,7 @@
         });
     </script>
     
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-
-    <script>
-        var $commentBar = $("#comments aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            loadComment();
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
+    <script> loadComment(); </script>
 
 </div>
 
