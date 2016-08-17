@@ -18,19 +18,19 @@
 
 
 
-<meta name="description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=5810
-题意:将$n$个球随机放入$m$个盒子中，求$V={ {\sum_{i=1}^m(X_i-\bar{X})^2}\over m}$的期望。">
+<meta name="description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=3537
+题意：翻硬币游戏，每次可以翻动一个、二个或三个硬币,并且最右边的硬币开始必须是正面朝上的(Mock Turtles游戏)。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU 5810 Balls and Boxes【期望，公式推导】">
-<meta property="og:url" content="https://yukizzz.github.io/2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/index.html">
+<meta property="og:title" content="HDU 3537 Daizhenyang's Coin【翻硬币游戏】">
+<meta property="og:url" content="https://yukizzz.github.io/2016/08/17/HDU-3537-Daizhenyang-s-Coin【翻硬币游戏】/index.html">
 <meta property="og:site_name" content="Zhuyujiang's blog">
-<meta property="og:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=5810
-题意:将$n$个球随机放入$m$个盒子中，求$V={ {\sum_{i=1}^m(X_i-\bar{X})^2}\over m}$的期望。">
-<meta property="og:updated_time" content="2016-08-15T00:38:30.619Z">
+<meta property="og:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=3537
+题意：翻硬币游戏，每次可以翻动一个、二个或三个硬币,并且最右边的硬币开始必须是正面朝上的(Mock Turtles游戏)。">
+<meta property="og:updated_time" content="2016-08-17T16:18:54.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU 5810 Balls and Boxes【期望，公式推导】">
-<meta name="twitter:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=5810
-题意:将$n$个球随机放入$m$个盒子中，求$V={ {\sum_{i=1}^m(X_i-\bar{X})^2}\over m}$的期望。">
+<meta name="twitter:title" content="HDU 3537 Daizhenyang's Coin【翻硬币游戏】">
+<meta name="twitter:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=3537
+题意：翻硬币游戏，每次可以翻动一个、二个或三个硬币,并且最右边的硬币开始必须是正面朝上的(Mock Turtles游戏)。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -62,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>HDU 5810 Balls and Boxes【期望，公式推导】 | Zhuyujiang&#39;s blog</title>
+<title>HDU 3537 Daizhenyang&#39;s Coin【翻硬币游戏】 | Zhuyujiang&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -265,11 +265,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-HDU-5810-Balls-and-Boxes【期望，公式推导】" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HDU-3537-Daizhenyang-s-Coin【翻硬币游戏】" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/" class="article-date">
-      <time datetime="2016-08-14T16:04:44.000Z" itemprop="datePublished">2016-08-15</time>
+      <a href="/2016/08/17/HDU-3537-Daizhenyang-s-Coin【翻硬币游戏】/" class="article-date">
+      <time datetime="2016-08-17T14:38:39.000Z" itemprop="datePublished">2016-08-17</time>
 </a>
 
 
@@ -284,7 +284,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      HDU 5810 Balls and Boxes【期望，公式推导】
+      HDU 3537 Daizhenyang&#39;s Coin【翻硬币游戏】
     </h1>
   
 
@@ -293,13 +293,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/HDU/">HDU</a><a class="article-category-link" href="/categories/HDU/ACM-概率/">ACM_概率</a>
+    <a class="article-category-link" href="/categories/HDU/">HDU</a><a class="article-category-link" href="/categories/HDU/ACM-博弈/">ACM_博弈</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/">ACM</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博弈/">博弈</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -310,11 +310,11 @@
       
       
           
-        <h2 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5810" target="_blank" rel="external">http://acm.hdu.edu.cn/showproblem.php?pid=5810</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意:"></a>题意:</h2><p>将$n$个球随机放入$m$个盒子中，求$V={ {\sum_{i=1}^m(X_i-\bar{X})^2}\over m}$的期望。<br><a id="more"></a></p>
-<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><h3 id="推导一："><a href="#推导一：" class="headerlink" title="推导一："></a>推导一：</h3><p>可以将问题看成样本数量（实验次数）为m的，将n个球放入m个盒子中，观察某一盒子中的球个数的实验。<br>由$E[V] = E[{ {\sum_{i=1}^m(X_i-\bar{X})^2}\over m}]=E[(X_i-\bar{X})^2]=E[X_i^2-2X_i\bar{X}+{\bar{X}^2}]=E[X_i^2]-\bar{X}^2$<br>已知$D(X)=E(X^2)-[E(X)]^2$，因此有<strong>$E[V]=D[X_i]$</strong><br>对于某个样本来说，即一次实验，为$n$次伯努利实验， 方差为$n\times{1\over m}\times{(m-1) \over m}$。</p>
-<h3 id="推导二："><a href="#推导二：" class="headerlink" title="推导二："></a>推导二：</h3><p>$V = \sum_{i=1}^m {X_i^2\over m}-2\bar{X}{n\over m}+\bar{X}^2= \sum_{i=1}^m {X_i^2\over m}-{n^2\over m^2}=E[X_i^2]-{n^2\over m^2}$<br>关键是要求$E[X_i^2]$<br>用随机变量$Y_j$表示第$j$个球是否在第$i$个盒子中，在$Y_j=1$，否则$Y_j=0$<br>那么有<br>$E[X_i^2]=E[(\sum_{j=1}^nY_j)^2]=E[\sum_{j=1}^n Y_j^2]+2E[\sum_{j=1}^n\sum_{k=1,k!=j}^nY_jY_k]<br>=nE[Y_j^2]+(n-1)nE[Y_jY_k]=\frac{n}{m}+\frac{n(n-1)}{m^2}$<br>所以$E[V] = \frac{n}{m} + \frac{n(n-1)}{m^2} - \frac{n^2}{m^2} = \frac{n(m-1)}{m^2}$</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*************************************************************************</span></div><div class="line">    &gt; File Name: 7.cpp</div><div class="line">    &gt; Author: jiangyuzhu</div><div class="line">    &gt; Mail: 834138558@qq.com </div><div class="line">    &gt; Created Time: 2016/8/9 14:02:54</div><div class="line"> ************************************************************************/</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a, ll b)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">return</span> b?gcd(b, a % b):a;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	ll n, m;</div><div class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;n, &amp;m) &amp;&amp; (n + m))&#123;</div><div class="line">		<span class="keyword">if</span>(m == <span class="number">1</span>)&#123;</div><div class="line">			<span class="built_in">puts</span>(<span class="string">"0/1"</span>);</div><div class="line">			<span class="keyword">continue</span>;</div><div class="line">		&#125;</div><div class="line">		ll a = n * (m - <span class="number">1</span>);</div><div class="line">		ll b = m * m;</div><div class="line">		ll g = gcd(a, b);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld/%lld\n"</span>, a / g, b / g);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=3537" target="_blank" rel="external">http://acm.hdu.edu.cn/showproblem.php?pid=3537</a></p>
+<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h2><p>翻硬币游戏，每次可以翻动一个、二个或三个硬币,并且最右边的硬币开始必须是正面朝上的(Mock Turtles游戏)。<br><a id="more"></a></p>
+<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p>上个月的时候做过这题，因为不知道如何打表，所以直接照<a href="http://www.cnblogs.com/kuangbin/p/3218060.html" target="_blank" rel="external">论文</a>背下来的结论 = =<br>今天逛csdn的时候看见了<a href="http://blog.csdn.net/dreamon3/article/details/52109255" target="_blank" rel="external">打表的姿势</a>，然后重新看了一遍题目，才发现我看错题了。。。<br>题目中说的并不是<strong>连续的拿若干个！！</strong><br>这样将单个游戏看成只有一枚硬币正面朝上，其余全是反面朝上。那么对于翻转2,3个硬币的情况，看成单个游戏的组合。所以可以直接打！表！找规律！下面附打表代码。<br>最后观察发现<strong>当$2n$中$1$的个数为奇数的时候，其$sg$值为$2n$，否则为$2n+1$</strong>。输入的时候判断一下$a_i$的奇偶即可。<br>论文的例子中$n=1,2,3$，完全符合我当时对题意的理解= = 好惨啊，当时还发了博客，好蠢啊= =</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*************************************************************************</span></div><div class="line">    &gt; File Name: 3537.cpp</div><div class="line">    &gt; Author: jiangyuzhu</div><div class="line">    &gt; Mail: 834138558@qq.com </div><div class="line">    &gt; Created Time: 2016/7/31 13:46:50</div><div class="line"> ************************************************************************/</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e2</span> + <span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> a[maxn];</div><div class="line"><span class="keyword">bool</span> vis[maxn];</div><div class="line"><span class="keyword">int</span> sg[maxn];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">gao</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	sg[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">50</span>; i++)&#123;</div><div class="line">		<span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) vis[sg[j]] = <span class="literal">true</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)&#123;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; j; k++)&#123;</div><div class="line">				vis[sg[j] ^ sg[k]] = <span class="literal">true</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;; j++)&#123;<span class="comment">//只有一个硬币可翻，不会输</span></div><div class="line">			<span class="keyword">if</span>(!vis[j])&#123;</div><div class="line">				sg[i] = j;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="string">' '</span>&lt;&lt;sg[i]&lt;&lt;<span class="string">" cal "</span>&lt;&lt; <span class="number">__b</span>uiltin_popcount(<span class="number">2</span> * i) &lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> n;</div><div class="line"><span class="comment">//	gao();</span></div><div class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n))&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</div><div class="line">		&#125;</div><div class="line">		sort(a, a + n);</div><div class="line">		<span class="keyword">int</span> nn = unique(a, a + n) - a;<span class="comment">//记得去重</span></div><div class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nn; i++)&#123;</div><div class="line">			<span class="keyword">if</span>(<span class="number">__b</span>uiltin_popcount(a[i]) &amp; <span class="number">1</span>) ans ^= <span class="number">2</span> * a[i];</div><div class="line">			<span class="keyword">else</span> ans ^= <span class="number">2</span> * a[i] + <span class="number">1</span>;</div><div class="line">		&#125;	</div><div class="line">		<span class="keyword">if</span>(ans) <span class="built_in">puts</span>(<span class="string">"No"</span>);</div><div class="line">		<span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"Yes"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -324,16 +324,10 @@
     
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/08/15/HDU-5826-physics【物理】/">
-                    HDU 5826 physics【物理】
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/08/14/HDU-5816-Hearthstone【概率dp】/">
-                    HDU 5816 Hearthstone【概率dp】
+                <a href="/2016/08/17/HDU-5811-Colosseo【竞赛图，拓扑排序】/">
+                    HDU 5811 Colosseo【竞赛图，拓扑排序】
                 </a>
             </div>
         
@@ -350,7 +344,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接："><span class="toc-number">1.</span> <span class="toc-text">题目链接：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题意"><span class="toc-number">2.</span> <span class="toc-text">题意:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析："><span class="toc-number">3.</span> <span class="toc-text">分析：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#推导一："><span class="toc-number">3.1.</span> <span class="toc-text">推导一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推导二："><span class="toc-number">3.2.</span> <span class="toc-text">推导二：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码："><span class="toc-number">4.</span> <span class="toc-text">代码：</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接："><span class="toc-number">1.</span> <span class="toc-text">题目链接：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题意："><span class="toc-number">2.</span> <span class="toc-text">题意：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析："><span class="toc-number">3.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码："><span class="toc-number">4.</span> <span class="toc-text">代码：</span></a></li></ol>
         
     </div>
     <style>
@@ -385,7 +379,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"HDU 5810 Balls and Boxes【期望，公式推导】　| Zhuyujiang's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"HDU 3537 Daizhenyang's Coin【翻硬币游戏】　| Zhuyujiang's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     </div>
 
@@ -395,7 +389,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/" data-title="HDU 5810 Balls and Boxes【期望，公式推导】" data-url="https://yukizzz.github.io/2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/17/HDU-3537-Daizhenyang-s-Coin【翻硬币游戏】/" data-title="HDU 3537 Daizhenyang&#39;s Coin【翻硬币游戏】" data-url="https://yukizzz.github.io/2016/08/17/HDU-3537-Daizhenyang-s-Coin【翻硬币游戏】/"></div>
     <script>
         var duoshuoQuery = {short_name:"yukizzz"};
         function loadComment() {
@@ -406,7 +400,7 @@
         }
 
         $(function() { 
-            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/&callback=?";
+            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/08/17/HDU-3537-Daizhenyang-s-Coin【翻硬币游戏】/&callback=?";
             $.getJSON(jsonUrl, function(result) {
                 $.each(result.response, function(i, field) {
                     var value = field.comments;
@@ -431,15 +425,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/15/HDU-5826-physics【物理】/" title="上一篇: HDU 5826 physics【物理】">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/14/HDU-5816-Hearthstone【概率dp】/" title="下一篇: HDU 5816 Hearthstone【概率dp】">
+            <a href="/2016/08/17/HDU-5811-Colosseo【竞赛图，拓扑排序】/" title="下一篇: HDU 5811 Colosseo【竞赛图，拓扑排序】">
                 <i class="fa fa-angle-right"></i>
             </a>
         
