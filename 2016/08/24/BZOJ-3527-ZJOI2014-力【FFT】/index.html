@@ -24,7 +24,7 @@
 <meta property="og:url" content="https://yukizzz.github.io/2016/08/24/BZOJ-3527-ZJOI2014-力【FFT】/index.html">
 <meta property="og:site_name" content="Zhuyujiang's blog">
 <meta property="og:description" content="题目链接：http://www.lydsy.com/JudgeOnline/problem.php?id=3527">
-<meta property="og:updated_time" content="2016-08-24T09:04:55.397Z">
+<meta property="og:updated_time" content="2016-08-28T08:33:38.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ 3527 [ZJOI2014]力【FFT】">
 <meta name="twitter:description" content="题目链接：http://www.lydsy.com/JudgeOnline/problem.php?id=3527">
@@ -312,7 +312,7 @@
 <blockquote>
 <p><strong>Description</strong><br>给出$n$个数$q_i$，给出$Fj$的定义如下：<br>$F_j=\sum_{i\lt j}\frac{q_iq_j}{ (i-j)^{2} }-\sum_{i\gt j}\frac{q_iq_j}{ (i-j)^{2} }$<br>令$Ei=\frac{Fi}{q_i}$，求$Ei$.<br><strong>Input</strong><br>第一行一个整数$n$。<br>接下来$n$行每行输入一个数，第$i$行表示$q_i$。<br><strong>Output</strong><br>$n$行，第$i$行输出$E_i$。<br>与标准答案误差不超过$1e-2$即可。<br><strong>Sample Input</strong><br>5<br>4006373.885184<br>15375036.435759<br>1717456.469144<br>8514941.004912<br>1410681.345880<br><strong>Sample Output</strong><br>-16838672.693<br>3439.793<br>7509018.566<br>4595686.886<br>10903040.872<br><strong>Hint</strong><br>$对于30\%的数据，n≤1000$。<br>$对于50\%的数据，n≤60000$。<br>$对于100\%的数据，n≤100000，0&lt;q_i&lt;1000000000$。<br><strong>Source</strong><br>感谢nodgd放题</p>
 </blockquote>
-<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p>化简成比较直观的形式就是<br>$$ E_j=\sum_{i=1}^{j-1}\frac{q_{i}}{(i-j)^{2}}-\sum_{i=j+1}^{n}\frac{q_i}{(i-j)^{2}}$$<br>令$f(i) = q_i,\ g(i) = \frac{1}{i^2}$，<br>则$$E_j=\sum_{i=1}^{j-1}f(i) \times g(j-i)-\sum_{i=j+1}^nf(i) \times g(j-i)$$<br>这样我们发现左右两边都是很卷积的形式，$c_i = \sum_{j=0}^ia_j\times b_{i-j}$，前一部分直接$FFT$算，后一部可以逆序处理，为使下标一致，令$f’(j)=f(n-j-1)$，则第二部分变为$\sum_{i=0}^{n-1}f’(j) \times g(j - i)$，用$FFT$解即可。</p>
+<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p>化简成比较直观的形式就是<br>$$ E_j=\sum_{i=1}^{j-1}\frac{q_{i}}{(i-j)^{2}}-\sum_{i=j+1}^{n}\frac{q_i}{(i-j)^{2}}$$<br>令$f(i) = q_i,\ g(i) = \frac{1}{i^2}$，<br>则$$E_j=\sum_{i=1}^{j-1}f(i) \times g(j-i)-\sum_{i=j+1}^nf(i) \times g(j-i)$$<br>这样我们发现左右两边都是很卷积的形式，$c_i = \sum_{j=0}^ia_j\times b_{i-j}$，前一部分直接$FFT$算。<br>后一部分，$\sum_{i=j+1}^nf(i) \times g(j-i)=\sum_{i=1}^{n-j}f(i+j) \times g(i)$<br>倒序处理并使下标从$0$开始，令$f’(n-i-j)=f(i+j)$，则第二部分变为$\sum_{i=0}^{n-j-1}f’(n-i-j) \times g(i)$，转化为卷积的形式用$FFT$解即可。</p>
 <hr>
 <p>非常好的FFT学习资料：<br><a href="http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform#i-13" target="_blank" rel="external">从多项式乘法到快速傅里叶变换</a><br><a href="http://medalplus.com/?p=1652" target="_blank" rel="external">&lt;从入门到崩溃&gt;快速傅里叶变换学习笔记</a></p>
 <hr>
