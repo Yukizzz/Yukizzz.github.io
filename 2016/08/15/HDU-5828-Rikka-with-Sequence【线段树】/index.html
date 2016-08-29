@@ -34,7 +34,7 @@
 给定区间内所有数将上$x$
 给定区间内所有数开根
 求给定区间内所有数的和">
-<meta property="og:updated_time" content="2016-08-15T03:24:24.331Z">
+<meta property="og:updated_time" content="2016-08-29T01:22:19.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU 5828 Rikka with Sequence【线段树】">
 <meta name="twitter:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=5828
@@ -201,7 +201,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/">ACM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zkw线段树/">zkw线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主席树/">主席树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优先级队列/">优先级队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈/">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扫描线/">扫描线</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序/">拓扑排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概率dp/">概率dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/物理/">物理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状压dp/">状压dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线段树/">线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脑洞/">脑洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/">ACM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NTT/">NTT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zkw线段树/">zkw线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主席树/">主席树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优先级队列/">优先级队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈/">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扫描线/">扫描线</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序/">拓扑排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概率dp/">概率dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/物理/">物理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状压dp/">状压dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线段树/">线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脑洞/">脑洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a></li></ul>
                     </div>
                 </section>
                 
@@ -284,6 +284,15 @@
       <time datetime="2016-08-15T02:55:41.000Z" itemprop="datePublished">2016-08-15</time>
 </a>
 
+ 
+    <a href="/2016/08/15/HDU-5828-Rikka-with-Sequence【线段树】/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" "></span>
+        
+        
+    </a>
 
     </div>
   
@@ -305,7 +314,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/HDU/">HDU</a><a class="article-category-link" href="/categories/HDU/ACM-数据结构/">ACM_数据结构</a>
+    <a class="article-category-link" href="/categories/ACM-数据结构/">ACM_数据结构</a>
     </div>
 
 
@@ -446,7 +455,31 @@
         });
     </script>
     
-    <script> loadComment(); </script>
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
 
 </div>
 
