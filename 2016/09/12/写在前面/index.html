@@ -18,21 +18,16 @@
 
 
 
-<meta name="description" content="题目链接：http://codeforces.com/contest/266/problem/D
-题意：求图的绝对中心，即在边上或者顶点中选一个点$X$，使得该点到图中顶点的最远距离$f(X)$最小。">
+<meta name="description" content="一些总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces 266D BerDonalds【图绝对中心】">
-<meta property="og:url" content="https://yukizzz.github.io/2016/09/08/Codeforces-266D-BerDonalds【图绝对中心】/index.html">
+<meta property="og:title" content="写在前面">
+<meta property="og:url" content="https://yukizzz.github.io/2016/09/12/写在前面/index.html">
 <meta property="og:site_name" content="Zhuyujiang's blog">
-<meta property="og:description" content="题目链接：http://codeforces.com/contest/266/problem/D
-题意：求图的绝对中心，即在边上或者顶点中选一个点$X$，使得该点到图中顶点的最远距离$f(X)$最小。">
-<meta property="og:image" content="https://yukizzz.github.io/(/images/1.png">
-<meta property="og:updated_time" content="2016-09-07T16:35:42.347Z">
+<meta property="og:description" content="一些总结">
+<meta property="og:updated_time" content="2016-09-12T02:44:13.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces 266D BerDonalds【图绝对中心】">
-<meta name="twitter:description" content="题目链接：http://codeforces.com/contest/266/problem/D
-题意：求图的绝对中心，即在边上或者顶点中选一个点$X$，使得该点到图中顶点的最远距离$f(X)$最小。">
-<meta name="twitter:image" content="https://yukizzz.github.io/(/images/1.png">
+<meta name="twitter:title" content="写在前面">
+<meta name="twitter:description" content="一些总结">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -64,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Codeforces 266D BerDonalds【图绝对中心】 | Zhuyujiang&#39;s blog</title>
+<title>写在前面 | Zhuyujiang&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -267,11 +262,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Codeforces-266D-BerDonalds【图绝对中心】" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-写在前面" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/08/Codeforces-266D-BerDonalds【图绝对中心】/" class="article-date">
-      <time datetime="2016-09-07T16:04:17.000Z" itemprop="datePublished">2016-09-08</time>
+      <a href="/2016/09/12/写在前面/" class="article-date">
+      <time datetime="2016-09-12T02:37:23.000Z" itemprop="datePublished">2016-09-12</time>
 </a>
 
 
@@ -286,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Codeforces 266D BerDonalds【图绝对中心】
+      写在前面
     </h1>
   
 
@@ -295,13 +290,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/ACM-图论/">ACM_图论</a>
+    <a class="article-category-link" href="/categories/ACM-集训/">ACM_集训</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图绝对中心/">图绝对中心</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM-集训/">ACM_集训</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -312,12 +307,13 @@
       
       
           
-        <h2 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h2><p><a href="http://codeforces.com/contest/266/problem/D" target="_blank" rel="external">http://codeforces.com/contest/266/problem/D</a></p>
-<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h2><p>求图的绝对中心，即在边上或者顶点中选一个点$X$，使得该点到图中顶点的最远距离$f(X)$最小。<br><a id="more"></a></p>
-<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p>参考<a href="http://adn.botao.hu/adn-backup/blog/attachments/month_0705/32007531153238.pdf" target="_blank" rel="external">非常透彻的讲解</a> 见C题</p>
-<p>=== 我是搬运工===</p>
-<p>首先$floyd$求出任意两点之间的最短路。<br>其次，根据题意，对于某一点$X，设其在线段$u-v$上，与点$u$的距离为$x$，对于任意点$w$，我们有f(X)=max\ (min\ (d[u][w]+x, d[v][w]+L_{u,v}-x\ )\ )$。<br>下面来分析$f(X)$的性质，对于固定的线段$u-v$，我们可以画出$f(X)关于x$的函数图像，为方便比较，把$w$们放在一个坐标系中，由于我们要求的是到其他点的最大值，所以对于某个$x$，只要保留该$x$对应的最大的$f(x)$值即可，也就是函数图像中最上面的点，如下图实线所示。<br><img src="(/images/1.png" alt="Alt text"><br>$f(X)$的最小值就是实线中的最低点，观察图可知，这个最小值必然在交叉点上，即$L_1，L_2，L_3…$。<br>根据函数图像，存在交叉点的前提是$d[u][w_j] &gt; d[u][w_k] 并且 d[v][w_j] &lt; d[v][w_k]$，且有$d[u][w_j] + L_{u,v} - x = d[v][w_k] + x$，而此时的$f(X)= \frac{d[u][w_j] + L_{u,v} - x +  d[v][w_k]+ x}{2} = \frac{d[u][w_j] + L_{u,v}  +  d[v][w_k]}{2}$<br>这样我们枚举每一条边，然后对于$d[u][w]$从大到小排个序，扫一遍，按照上述式子答案就出来了。</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;p;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">2e2</span> + <span class="number">5</span>, oo = <span class="number">0x3f3f3f3f</span> ;</div><div class="line"><span class="keyword">int</span> dist[maxn][maxn];</div><div class="line"><span class="keyword">struct</span> EDGE&#123;</div><div class="line">	<span class="keyword">int</span> from, to, val;</div><div class="line">&#125;edge[maxn * maxn];</div><div class="line">p node[maxn];</div><div class="line"><span class="keyword">int</span> tot;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> n, m;<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="keyword">int</span> a, b, w; </div><div class="line">	tot = <span class="number">0</span>;</div><div class="line">	<span class="built_in">memset</span>(dist, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dist));</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;w);</div><div class="line">		a--;b--;</div><div class="line">		dist[a][b] = dist[b][a] = w;</div><div class="line">		edge[tot++] = (EDGE)&#123;a, b, w&#125;;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k++)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</div><div class="line">				<span class="keyword">if</span>(i == j)	dist[i][j] = <span class="number">0</span>;</div><div class="line">				dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> ans = oo;</div><div class="line">	<span class="keyword">int</span> tmp;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tot; i++)&#123;</div><div class="line">		<span class="keyword">int</span> u = edge[i].from, v = edge[i].to;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</div><div class="line">			node[j] = p(dist[j][u], dist[j][v]);</div><div class="line">		&#125;</div><div class="line">		tmp = n - <span class="number">1</span>;</div><div class="line">		sort(node, node + n);</div><div class="line">		ans = min(ans, node[n - <span class="number">1</span>].first * <span class="number">2</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = n - <span class="number">2</span>; j &gt;= <span class="number">0</span>; j--)&#123;</div><div class="line">			<span class="keyword">if</span>(node[j].second &gt; node[tmp].second)&#123;</div><div class="line">				ans = min(ans, node[tmp].second + node[j].first + edge[i].val);</div><div class="line">				tmp = j;</div><div class="line">			&#125;</div><div class="line">		&#125;	</div><div class="line">		ans = min(ans, node[tmp].second * <span class="number">2</span>);	</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%.10f\n"</span>, (<span class="keyword">double</span>)ans / <span class="number">2.0</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>一些总结<br><a id="more"></a><br>SCUACM 2016集训 7.4【(15 + 0)/17】</p>
+<p>SCUACM 2016集训 7.8【(8 + 3)/16】</p>
+<p>SCUACM 2016集训 7.11【(6 + 1)/11】</p>
+<p>SCUACM 2016集训 7.13【(13 + 2)/18】</p>
+<p>SCUACM 2016集训 7.15【(11 + 3)/19】</p>
+<p>SCUACM 2016集训 7.22【(13 + 2)/20】</p>
+<p>补题不能停！继续努力！</p>
 
       
     </div>
@@ -328,16 +324,10 @@
     
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/09/11/SCUACM-2016集训-7-4【15-17】/">
-                    SCUACM 2016集训 7.4【15/17】
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/09/08/Codeforces-681E-Runaway-to-a-Shadow【计算几何】/">
-                    Codeforces 681E Runaway to a Shadow【计算几何】
+                <a href="/2016/09/11/SCUACM-2016集训-7-22【15-20】/">
+                    SCUACM 2016集训 7.22【15/20】
                 </a>
             </div>
         
@@ -354,7 +344,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接："><span class="toc-number">1.</span> <span class="toc-text">题目链接：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题意："><span class="toc-number">2.</span> <span class="toc-text">题意：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析："><span class="toc-number">3.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码："><span class="toc-number">4.</span> <span class="toc-text">代码：</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -382,7 +372,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Codeforces 266D BerDonalds【图绝对中心】　| Zhuyujiang's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"写在前面　| Zhuyujiang's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     </div>
 
@@ -392,7 +382,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/08/Codeforces-266D-BerDonalds【图绝对中心】/" data-title="Codeforces 266D BerDonalds【图绝对中心】" data-url="https://yukizzz.github.io/2016/09/08/Codeforces-266D-BerDonalds【图绝对中心】/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/12/写在前面/" data-title="写在前面" data-url="https://yukizzz.github.io/2016/09/12/写在前面/"></div>
     <script>
         var duoshuoQuery = {short_name:"yukizzz"};
         function loadComment() {
@@ -403,7 +393,7 @@
         }
 
         $(function() { 
-            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/09/08/Codeforces-266D-BerDonalds【图绝对中心】/&callback=?";
+            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/09/12/写在前面/&callback=?";
             $.getJSON(jsonUrl, function(result) {
                 $.each(result.response, function(i, field) {
                     var value = field.comments;
@@ -428,15 +418,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/09/11/SCUACM-2016集训-7-4【15-17】/" title="上一篇: SCUACM 2016集训 7.4【15/17】">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/09/08/Codeforces-681E-Runaway-to-a-Shadow【计算几何】/" title="下一篇: Codeforces 681E Runaway to a Shadow【计算几何】">
+            <a href="/2016/09/11/SCUACM-2016集训-7-22【15-20】/" title="下一篇: SCUACM 2016集训 7.22【15/20】">
                 <i class="fa fa-angle-right"></i>
             </a>
         
