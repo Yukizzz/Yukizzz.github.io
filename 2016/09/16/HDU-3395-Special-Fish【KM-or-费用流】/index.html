@@ -18,19 +18,19 @@
 
 
 
-<meta name="description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=5821
-题意：给定初始序列和目标序列，给定若干区间，按给定的顺序，可以依次改变区间中数的排列，问能否达到目标序列。">
+<meta name="description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=3395
+题意：给定$n$条鱼的价值及他们之间的攻击和被攻击关系，一个条鱼仅可以攻击和被攻击一次，攻击产生的价值为两条鱼的异或，问产生的最大结果？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU 5821 Ball【脑洞】">
-<meta property="og:url" content="https://yukizzz.github.io/2016/08/15/HDU-5821-Ball【脑洞】/index.html">
+<meta property="og:title" content="HDU 3395 Special Fish【KM or 费用流】">
+<meta property="og:url" content="https://yukizzz.github.io/2016/09/16/HDU-3395-Special-Fish【KM-or-费用流】/index.html">
 <meta property="og:site_name" content="Zhuyujiang's blog">
-<meta property="og:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=5821
-题意：给定初始序列和目标序列，给定若干区间，按给定的顺序，可以依次改变区间中数的排列，问能否达到目标序列。">
-<meta property="og:updated_time" content="2016-08-29T01:22:11.567Z">
+<meta property="og:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=3395
+题意：给定$n$条鱼的价值及他们之间的攻击和被攻击关系，一个条鱼仅可以攻击和被攻击一次，攻击产生的价值为两条鱼的异或，问产生的最大结果？">
+<meta property="og:updated_time" content="2016-09-16T02:14:27.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU 5821 Ball【脑洞】">
-<meta name="twitter:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=5821
-题意：给定初始序列和目标序列，给定若干区间，按给定的顺序，可以依次改变区间中数的排列，问能否达到目标序列。">
+<meta name="twitter:title" content="HDU 3395 Special Fish【KM or 费用流】">
+<meta name="twitter:description" content="题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=3395
+题意：给定$n$条鱼的价值及他们之间的攻击和被攻击关系，一个条鱼仅可以攻击和被攻击一次，攻击产生的价值为两条鱼的异或，问产生的最大结果？">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -62,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>HDU 5821 Ball【脑洞】 | Zhuyujiang&#39;s blog</title>
+<title>HDU 3395 Special Fish【KM or 费用流】 | Zhuyujiang&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -265,11 +265,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-HDU-5821-Ball【脑洞】" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HDU-3395-Special-Fish【KM-or-费用流】" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/15/HDU-5821-Ball【脑洞】/" class="article-date">
-      <time datetime="2016-08-15T01:03:10.000Z" itemprop="datePublished">2016-08-15</time>
+      <a href="/2016/09/16/HDU-3395-Special-Fish【KM-or-费用流】/" class="article-date">
+      <time datetime="2016-09-16T01:51:42.000Z" itemprop="datePublished">2016-09-16</time>
 </a>
 
 
@@ -284,7 +284,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      HDU 5821 Ball【脑洞】
+      HDU 3395 Special Fish【KM or 费用流】
     </h1>
   
 
@@ -293,13 +293,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/ACM-巧妙处理/">ACM_巧妙处理</a>
+    <a class="article-category-link" href="/categories/ACM-图论/">ACM_图论</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/脑洞/">脑洞</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KM/">KM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/费用流/">费用流</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -310,10 +310,11 @@
       
       
           
-        <h2 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5821" target="_blank" rel="external">http://acm.hdu.edu.cn/showproblem.php?pid=5821</a></p>
-<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h2><p>给定初始序列和目标序列，给定若干区间，按给定的顺序，可以依次改变区间中数的排列，问能否达到目标序列。<br><a id="more"></a></p>
-<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p>这题好难。<br>首先明确：颜色相同的球中，每个球对应的目标位置的相对顺序与该球原来的相对顺序是相同的。<br>那么对于初始序列中的每个元素，记录下他的目标位置，为使他越来越靠近他的目标位置，在操作区间内按目标位置不停排序，排到前面就意味着他被换到前面的位置，反之相同。这样他就不停的靠近目标位置，最后看这个目标位置是否到达即可。<br>最初写的版本对于每个元素，遍历每个区间，记录下目标与边界的差值，然后不停的移动乱搞。。其实直接排个序就可以巧妙解决。。<br>智商啊我要智商。</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*************************************************************************</span></div><div class="line">    &gt; File Name: 8.cpp</div><div class="line">    &gt; Author: jiangyuzhu</div><div class="line">    &gt; Mail: 834138558@qq.com </div><div class="line">    &gt; Created Time: 2016/8/11 10:20:15</div><div class="line"> ************************************************************************/</div><div class="line"> </div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;p;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e3</span> + <span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> a[maxn], b[maxn];</div><div class="line"><span class="keyword">int</span> ans[maxn];</div><div class="line"><span class="keyword">struct</span> OP&#123;</div><div class="line">    <span class="keyword">int</span> l, r;</div><div class="line">&#125;op[maxn];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> T;<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">    <span class="keyword">while</span>(T--)&#123;</div><div class="line">	    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q[maxn];</div><div class="line">        <span class="keyword">int</span> n, m;<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</div><div class="line">		&#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b[i]);</div><div class="line">			q[b[i]].push(i);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">bool</span> flag = <span class="literal">true</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</div><div class="line">			<span class="keyword">if</span>(q[a[i]].empty())&#123;</div><div class="line">				flag = <span class="literal">false</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">			ans[i] = q[a[i]].front();</div><div class="line">			q[a[i]].pop();</div><div class="line">		&#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;op[i].l, &amp;op[i].r);</div><div class="line">        &#125;</div><div class="line">		<span class="keyword">if</span>(!flag)&#123;</div><div class="line">			<span class="built_in">puts</span>(<span class="string">"No"</span>);</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</div><div class="line">			sort(ans + op[i].l - <span class="number">1</span>, ans + op[i].r);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</div><div class="line">            <span class="keyword">if</span>(ans[i] != i)&#123;</div><div class="line">                flag = <span class="literal">false</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(!flag) <span class="built_in">puts</span>(<span class="string">"No"</span>);</div><div class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"Yes"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=3395" target="_blank" rel="external">http://acm.hdu.edu.cn/showproblem.php?pid=3395</a></p>
+<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h2><p>给定$n$条鱼的价值及他们之间的攻击和被攻击关系，一个条鱼仅可以攻击和被攻击一次，攻击产生的价值为两条鱼的异或，问产生的最大结果？<br><a id="more"></a></p>
+<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p>比较裸的KM算法，但是可以考虑用最小费用流解决， 最小费用流的前提是最大流，但是题目要求的最小费用却不一定是最大流流，这时需要额外添加一下边， 可以直接将左边的点向超级汇点$t$连一条边，权值为0，流量为1。<br>这个套路在byvoid的<a href="https://www.byvoid.com/blog/match-km" target="_blank" rel="external">二分图带权匹配 KM算法与费用流模型建立</a>也有提到过。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><p>下面是用KM做的。。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*************************************************************************</span></div><div class="line">    &gt; File Name: 3395.cpp</div><div class="line">    &gt; Author: jiangyuzhu</div><div class="line">    &gt; Mail: 834138558@qq.com </div><div class="line">    &gt; Created Time: 2016/9/14 17:34:48</div><div class="line"> ************************************************************************/</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> nm, nn;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e2</span> + <span class="number">5</span>, INF = <span class="number">0x3f3f3f3f</span>;</div><div class="line"><span class="keyword">int</span> usex[maxn], usey[maxn], match[maxn], lx[maxn], ly[maxn], slack[maxn];</div><div class="line"><span class="keyword">int</span> z[maxn][maxn];</div><div class="line"><span class="keyword">int</span> a[maxn];</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">&#123;</div><div class="line">    usex[x] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nm; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(usey[i]) <span class="keyword">continue</span>;</div><div class="line">        <span class="keyword">int</span> s = lx[x] + ly[i] - z[x][i];</div><div class="line">        <span class="keyword">if</span>(s == <span class="number">0</span>)&#123;</div><div class="line">            usey[i] = <span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>(match[i] == <span class="number">-1</span>|| Find(match[i] ))&#123;</div><div class="line">                match[i] = x;</div><div class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(slack[i] &gt; s)&#123;</div><div class="line">            slack[i] = s;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">KM</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">memset</span>(ly, <span class="number">0</span>, <span class="keyword">sizeof</span>(ly));</div><div class="line">    <span class="built_in">memset</span>(match, <span class="number">-1</span>, <span class="keyword">sizeof</span>(match));</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;nn; i++)&#123;</div><div class="line">        lx[i] = - INF;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nm; j++)&#123;</div><div class="line">            <span class="keyword">if</span>(lx[i] &lt; z[i][j])</div><div class="line">                lx[i] = z[i][j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> a = <span class="number">0</span>; a &lt; nn; a++)&#123;</div><div class="line">        <span class="built_in">memset</span>(slack, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(slack));</div><div class="line">        <span class="keyword">for</span>(;;)&#123;</div><div class="line">            <span class="built_in">memset</span>(usex, <span class="number">0</span>,<span class="keyword">sizeof</span>(usex));</div><div class="line">            <span class="built_in">memset</span>(usey, <span class="number">0</span>, <span class="keyword">sizeof</span>(usey));</div><div class="line">            <span class="keyword">if</span>(Find(a)) <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">int</span> d = INF;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nm; i++)&#123;</div><div class="line">                <span class="keyword">if</span>(!usey[i] &amp;&amp; d &gt; slack[i])&#123;</div><div class="line">                    d = slack[i];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nn; i++)&#123;</div><div class="line">                <span class="keyword">if</span>(usex[i]) lx[i] -= d;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nm; i++)&#123;</div><div class="line">                <span class="keyword">if</span>(usey[i]) ly[i] += d;</div><div class="line">                <span class="keyword">else</span> slack[i] -= d;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nm; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(match[i] &gt; <span class="number">-1</span>)&#123;</div><div class="line">            sum += z[match[i]][i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"><span class="keyword">char</span> t[maxn];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> n;</div><div class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; n)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</div><div class="line">		<span class="built_in">memset</span>(z, <span class="number">0</span>, <span class="keyword">sizeof</span>(z));</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%s"</span>, t);</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</div><div class="line">				<span class="keyword">if</span>(t[j] == <span class="string">'1'</span>) z[i][j] = a[i] ^ a[j]; </div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		nn = n, nm =  n;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, KM());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -323,16 +324,10 @@
     
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/08/15/HDU-5828-Rikka-with-Sequence【线段树】/">
-                    HDU 5828 Rikka with Sequence【线段树】
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/08/15/HDU-5826-physics【物理】/">
-                    HDU 5826 physics【物理】
+                <a href="/2016/09/14/读书笔记/">
+                    读书笔记
                 </a>
             </div>
         
@@ -377,7 +372,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"HDU 5821 Ball【脑洞】　| Zhuyujiang's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"HDU 3395 Special Fish【KM or 费用流】　| Zhuyujiang's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     </div>
 
@@ -387,7 +382,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/15/HDU-5821-Ball【脑洞】/" data-title="HDU 5821 Ball【脑洞】" data-url="https://yukizzz.github.io/2016/08/15/HDU-5821-Ball【脑洞】/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/16/HDU-3395-Special-Fish【KM-or-费用流】/" data-title="HDU 3395 Special Fish【KM or 费用流】" data-url="https://yukizzz.github.io/2016/09/16/HDU-3395-Special-Fish【KM-or-费用流】/"></div>
     <script>
         var duoshuoQuery = {short_name:"yukizzz"};
         function loadComment() {
@@ -398,7 +393,7 @@
         }
 
         $(function() { 
-            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/08/15/HDU-5821-Ball【脑洞】/&callback=?";
+            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/09/16/HDU-3395-Special-Fish【KM-or-费用流】/&callback=?";
             $.getJSON(jsonUrl, function(result) {
                 $.each(result.response, function(i, field) {
                     var value = field.comments;
@@ -423,15 +418,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/15/HDU-5828-Rikka-with-Sequence【线段树】/" title="上一篇: HDU 5828 Rikka with Sequence【线段树】">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/15/HDU-5826-physics【物理】/" title="下一篇: HDU 5826 physics【物理】">
+            <a href="/2016/09/14/读书笔记/" title="下一篇: 读书笔记">
                 <i class="fa fa-angle-right"></i>
             </a>
         
