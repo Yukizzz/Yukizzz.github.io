@@ -118,7 +118,7 @@ button::-moz-focus-inner {
   padding: 0;
 }
 html {
-  font-size: 17px;
+  font-size: 16px;
 }
 body {
   font-family: "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
@@ -232,7 +232,7 @@ a {
 }
 #container .left-col {
   background: rgba(255,255,255,0.8) none repeat scroll 0% 0%;
-  width: 308px;
+  width: 285px;
   position: fixed;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in;
@@ -262,7 +262,7 @@ a {
   right: 0;
   min-height: 100%;
   background: rgba(255,255,255,0.8) none repeat scroll 0% 0%;
-  left: 308px;
+  left: 285px;
   width: auto;
 }
 @media screen and (max-width: 800px) {
@@ -578,7 +578,7 @@ a {
   text-align: center;
   margin: 13px 0;
   font-family: Times, Georgia, serif;
-  font-size: 31px;
+  font-size: 30px;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
@@ -707,7 +707,7 @@ a {
 }
 #header .header-menu li a {
   font-size: 0.875rem;
-  min-width: 308px;
+  min-width: 285px;
 }
 #header .switch-area {
   position: relative;
@@ -776,13 +776,13 @@ a {
   font-family: Arial;
 }
 #header .header-nav .social a {
-  width: 38px;
-  height: 38px;
+  width: 37px;
+  height: 37px;
   border-radius: 50%;
   margin: 0 2px 6px;
   vertical-align: middle;
-  font-size: 25.080000000000002px;
-  line-height: 38px;
+  font-size: 24.42px;
+  line-height: 37px;
   text-align: center;
   color: #fff;
   background: #6f7170;
@@ -1016,7 +1016,7 @@ a {
 }
 .hide-labels {
   position: fixed;
-  left: 386px;
+  left: 363px;
   top: 30px;
   padding: 1px;
   border: none;
@@ -1036,7 +1036,7 @@ a {
   opacity: 1;
 }
 #post-nav-button {
-  left: 308px;
+  left: 285px;
   top: 61.8%;
 }
 #post-nav-button a {
@@ -1223,7 +1223,7 @@ ul > li::before,
   color: #999;
   position: relative;
   margin-right: 10px;
-  font: 17px FontAwesome;
+  font: 16px FontAwesome;
 }
 .archive-article-inner .article-meta .article-category:before {
   float: left;
@@ -1255,16 +1255,16 @@ ul > li::before,
   background: transparent;
 }
 .body-wrap {
-  max-width: 60em;
-  margin: auto;
+  max-width: 70em;
+  margin: 0px;
   margin-bottom: 126px;
   overflow: hidden;
 }
 .article {
-  margin: 30px;
+  margin: 25px;
   margin-bottom: 5px;
   position: relative;
-  border-radius: 15px;
+  border-radius: 0px;
   -webkit-transition: all 0.2s ease-in;
 }
 .article.show {
@@ -1650,7 +1650,7 @@ li:hover {
 #tocButton {
   position: fixed;
   border: none;
-  left: 228px;
+  left: 205px;
   top: 389px;
   background: none;
   font-size: 0.9em;
@@ -1666,12 +1666,12 @@ li:hover {
 }
 .toc-article {
   position: fixed;
-  width: 238px;
+  width: 215px;
   top: 382px;
   bottom: 1em;
   left: 0;
   margin-left: 0em;
-  padding: 6px 10px 10px 48px;
+  padding: 6px 10px 10px 50px;
   border-radius: 2.8%;
   overflow: auto;
 }
@@ -2070,7 +2070,7 @@ aside.comment-bar:active {
   color: #999;
   position: relative;
   margin-right: 10px;
-  font: 17px FontAwesome;
+  font: 16px FontAwesome;
 }
 .archive-article-inner .article-meta .article-category:before {
   float: left;
@@ -2809,7 +2809,7 @@ pre .strong {
 .article-category::before {
   float: left;
   color: #999;
-  font: 17px FontAwesome;
+  font: 16px FontAwesome;
   margin-right: 5px;
   margin-top: 0.333333333333333rem;
 }
@@ -2826,7 +2826,7 @@ pre .strong {
 .article-pop-out:before {
   color: #999;
   content: "\f08d";
-  font: 17px FontAwesome;
+  font: 16px FontAwesome;
   float: left;
   margin-right: 5px;
   margin-top: 0.333333333333333rem;
