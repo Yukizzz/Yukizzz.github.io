@@ -240,7 +240,7 @@ a {
   -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: 0;
 }
 #container .left-col .overlay {
   width: 100%;
@@ -1255,7 +1255,7 @@ ul > li::before,
   background: transparent;
 }
 .body-wrap {
-  max-width: 65em;
+  max-width: 96%;
   margin: 0px;
   margin-bottom: 126px;
   overflow: hidden;
