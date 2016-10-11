@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhuyujiang" />
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+
+
+
+<meta name="description" content="题目链接：http://codeforces.com/problemset/problem/645/E
+题意：给定字符串，要求用字母表前$k$个字母组成长度为$n$的字符串，并添加在已知字符串后面，使得不同子序列个数最多，求个数。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces 645E Intellectual Inquiry【dp，构造】">
+<meta property="og:url" content="https://yukizzz.github.io/2016/09/07/Codeforces-645E-Intellectual-Inquiry【dp，构造】/index.html">
+<meta property="og:site_name" content="Zhuyujiang's blog">
+<meta property="og:description" content="题目链接：http://codeforces.com/problemset/problem/645/E
+题意：给定字符串，要求用字母表前$k$个字母组成长度为$n$的字符串，并添加在已知字符串后面，使得不同子序列个数最多，求个数。">
+<meta property="og:updated_time" content="2016-09-07T16:23:17.156Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces 645E Intellectual Inquiry【dp，构造】">
+<meta name="twitter:description" content="题目链接：http://codeforces.com/problemset/problem/645/E
+题意：给定字符串，要求用字母表前$k$个字母组成长度为$n$的字符串，并添加在已知字符串后面，使得不同子序列个数最多，求个数。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternative" href="/atom.xml" title="Zhuyujiang&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/resources/avatar.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Codeforces 645E Intellectual Inquiry【dp，构造】 | Zhuyujiang&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/resources/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhuyujiang</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Talk is Cheap</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/archives">所有文章</a></li>
+                        
+                            <li><a href="/categories">文章分类</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa CSDN" href="//blog.csdn.net/yukizzz" title="CSDN"></a>
+                            
+                                <a class="fa GitHub" href="//github.com/Yukizzz" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" href="//www.facebook.com/profile.php?id=100005125860208" title="Facebook"></a>
+                            
+                                <a class="fa 知乎" href="//www.zhihu.com/people/jiang-yu-zhu-41" title="知乎"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2DBIT/">2DBIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/2dBIT/">2dBIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/">ACM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM-集训/">ACM_集训</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CDQ分治/">CDQ分治</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS序/">DFS序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KM/">KM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LCA/">LCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lucas/">Lucas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manacher/">Manacher</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NTT/">NTT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SAM/">SAM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/">dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zkw线段树/">zkw线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中国剩余定理/">中国剩余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主席树/">主席树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优先级队列/">优先级队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/几何/">几何</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/割点/">割点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区间dp/">区间dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈/">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/回文串/">回文串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图绝对中心/">图绝对中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字典树/">字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/容斥/">容斥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/巧妙处理/">巧妙处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/差分思想/">差分思想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/并查集/">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异或/">异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维/">思维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扫描线/">扫描线</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序/">拓扑排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数位dp/">数位dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大权闭合子图/">最大权闭合子图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小割/">最小割</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/极角排序/">极角排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树形dp/">树形dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树状数组/">树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树链剖分/">树链剖分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概率dp/">概率dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/欧拉函数/">欧拉函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/求质数个数/">求质数个数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/物理/">物理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状压/">状压</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状压dp/">状压dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/矩阵快速幂/">矩阵快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/约瑟夫环/">约瑟夫环</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线段交/">线段交</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线段树/">线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脑洞/">脑洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行列式/">行列式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/费用流/">费用流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高维前缀和/">高维前缀和</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="//taosama.github.io/">Taosamao</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://luoxinchen.me/">luoxinchen</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://blog.csdn.net/jibancanyang/">JIBANCANYANG</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://helloworlderly.github.io/HelloWorld_Blog/">Goku姜永铭</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">(*/ω＼*)SCU~ACMer~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhuyujiang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/resources/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhuyujiang</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Talk is Cheap</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives">所有文章</a></li>
+                
+                    <li><a href="/categories">文章分类</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa CSDN" target="_blank" href="//blog.csdn.net/yukizzz" title="CSDN"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="//github.com/Yukizzz" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="//www.facebook.com/profile.php?id=100005125860208" title="Facebook"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="//www.zhihu.com/people/jiang-yu-zhu-41" title="知乎"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Codeforces-645E-Intellectual-Inquiry【dp，构造】" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/07/Codeforces-645E-Intellectual-Inquiry【dp，构造】/" class="article-date">
+      <time datetime="2016-09-07T15:58:00.000Z" itemprop="datePublished">2016-09-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Codeforces 645E Intellectual Inquiry【dp，构造】
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/ACM-动态规划/">ACM_动态规划</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+          
+        <h2 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h2><p><a href="http://codeforces.com/problemset/problem/645/E" target="_blank" rel="external">http://codeforces.com/problemset/problem/645/E</a></p>
+<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h2><p>给定字符串，要求用字母表前$k$个字母组成长度为$n$的字符串，并添加在已知字符串后面，使得不同<strong>子序列</strong>个数最多，求个数。<br><a id="more"></a></p>
+<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p>设$dp[i]:=前i个元素组成的子序列个数$，则有$dp[i] = dp[i - 1] * 2 - 重复序列个数$.<br>如何求得重复序列呢？首先对于每个$j \lt i$，我们都保证$dp[j]$中不包含重复序列，那么对于第$i$个元素，只需考虑$s[i]$对于序列的影响即可。而这重复部分即为$s[i]$上一个位置$last[s[i] - ‘a’ ]$之前的所有元素与$s[i]$形成的序列，即重复序列个数=$dp[last[s[i]-‘a’]-1]$。<br>为使最后的$dp[n + m]$最大，我们要尽量减小$dp[last[s[i]-‘a’]-1]$，而显然$dp$值是单调上升的，构造时每次选取last值最小的即可~~每次得到的$dp$都是最大的，这样累加起来最后得到的而$dp[n+m]$也一定是最大的。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">2e6</span> + <span class="number">5</span>, mod = <span class="number">1e9</span> + <span class="number">7</span>;</div><div class="line"><span class="keyword">char</span> s[maxn];</div><div class="line"><span class="keyword">int</span> dp[maxn];</div><div class="line"><span class="keyword">int</span> last[<span class="number">26</span> + <span class="number">5</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> n, k;<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, s + <span class="number">1</span>);</div><div class="line">	<span class="keyword">int</span> m = <span class="built_in">strlen</span>(s + <span class="number">1</span>);</div><div class="line">	<span class="built_in">memset</span>(last, <span class="number">-1</span>, <span class="keyword">sizeof</span>(last));</div><div class="line">	dp[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> tmp, res;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + m; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(i &lt;= m) tmp = s[i] - <span class="string">'a'</span>;</div><div class="line">		<span class="keyword">else</span>&#123;</div><div class="line">			res = n + m + <span class="number">1</span>, tmp = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k; j++)&#123;</div><div class="line">				<span class="keyword">if</span>(res &gt; last[j])&#123;</div><div class="line">					res = last[j];</div><div class="line">					tmp = j;</div><div class="line">					<span class="keyword">if</span>(res == <span class="number">-1</span>) <span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(last[tmp] &gt; <span class="number">0</span>) (dp[i] = dp[i - <span class="number">1</span>] * <span class="number">2</span> % mod - dp[last[tmp] - <span class="number">1</span>] + mod) %= mod;</div><div class="line">		<span class="keyword">else</span> dp[i] = dp[i - <span class="number">1</span>]  * <span class="number">2</span> % mod;</div><div class="line">		last[tmp] = i;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dp[m + n]);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/09/08/Codeforces-681E-Runaway-to-a-Shadow【计算几何】/">
+                    Codeforces 681E Runaway to a Shadow【计算几何】
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/09/05/To-do-list/">
+                    To-do list
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+
+
+
+
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接："><span class="toc-number">1.</span> <span class="toc-text">题目链接：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题意："><span class="toc-number">2.</span> <span class="toc-text">题意：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析："><span class="toc-number">3.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码："><span class="toc-number">4.</span> <span class="toc-text">代码：</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-2 i,
+        .toc-level-2 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+    <div class="share">
+        <div class="bdsharebuttonbox">
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Codeforces 645E Intellectual Inquiry【dp，构造】　| Zhuyujiang's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    </div>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/07/Codeforces-645E-Intellectual-Inquiry【dp，构造】/" data-title="Codeforces 645E Intellectual Inquiry【dp，构造】" data-url="https://yukizzz.github.io/2016/09/07/Codeforces-645E-Intellectual-Inquiry【dp，构造】/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"yukizzz"};
+        function loadComment() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://yukizzz.github.io/js/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        $(function() { 
+            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yukizzz&threads=2016/09/07/Codeforces-645E-Intellectual-Inquiry【dp，构造】/&callback=?";
+            $.getJSON(jsonUrl, function(result) {
+                $.each(result.response, function(i, field) {
+                    var value = field.comments;
+                    if (value > 0) {
+                        $(".count-comment").text(value);
+                        return;
+                    }
+                })
+
+            })
+        });
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/09/08/Codeforces-681E-Runaway-to-a-Shadow【计算几何】/" title="上一篇: Codeforces 681E Runaway to a Shadow【计算几何】">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/09/05/To-do-list/" title="下一篇: To-do list">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/HDU-5863-cjj-s-string-game【dp-矩阵快速幂】/">HDU 5863 cjj's string game【dp+矩阵快速幂】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/HDU-5860-Death-Sequence【约瑟夫环变形】/">HDU 5860 Death Sequence【约瑟夫环变形】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/HDU-5852-Intersection-is-not-allowed/">HDU 5852 Intersection is not allowed【容斥+行列式求解】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/HDU-5853-Jong-Hyok-and-String【后缀自动机】/">HDU 5853 Jong Hyok and String【后缀自动机】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/HDU-5803-Zhu’s-Math-Problem【数位dp】/">HDU 5803 Zhu’s Math Problem【数位dp】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/HDU-5800-To-My-Girlfriend【DP】/">HDU 5800 To My Girlfriend【DP】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/HDU-5802-Windows-10【贪心】/">HDU 5802 Windows 10【贪心】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/07/HDU-5798-Stabilization【异或运算巧妙处理】/">HDU 5798 Stabilization【异或运算巧妙处理】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/07/HDU-5794-A-Simple-Chess【容斥】/">HDU 5794 A Simple Chess【容斥】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/HDU-5919-Sequence-II【主席树】/">HDU 5919 Sequence II【主席树】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/HDU-5790-Prefix【主席树-字典树】/">HDU 5790 Prefix【主席树+字典树】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/SPOJ-DQUERY-D-query【主席树-Or-树状数组】/">SPOJ DQUERY - D-query【主席树 Or 树状数组】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/04/HDU-5785-Interesting【Manacher】/">HDU 5785 Interesting【Manacher】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/04/HDU-5784-How-Many-Triangles【极角排序】/">HDU 5784 How Many Triangles【极角排序】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/01/HDU-5772-String-problem【最大权闭合子图】/">HDU 5772 String problem【最大权闭合子图】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/01/HDU-5765-Bonds【状压dp-高维前缀和】/">HDU 5765 Bonds【状压+高维前缀和】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/30/HDU-5764-After-a-Sleepless-Night【DFS】/">HDU 5764 After a Sleepless Night【DFS】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/29/HDU-5760-Palindrome-Bo【dp】/">HDU 5760 Palindrome Bo【dp】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/HDU-5756-Boss-Bo【主席树】/">HDU 5756 Boss Bo【主席树+DFS序】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/HDU-5758-Explorer-Bo【树形dp】/">HDU 5758 Explorer Bo【树形dp】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/27/HDU-5892-Resident-Evil【二维树状数组】/">HDU 5892 Resident Evil【二维树状数组】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/27/Codeforces-341D-Iahub-and-Xors【二维树状数组】/">Codeforces 341D Iahub and Xors【二维树状数组】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/27/NEUOJ-1454-逃票的chanming-1【树状数组】/">NEUOJ 1454 逃票的chanming(1【树状数组】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/27/BZOJ-3132-上帝造题的七分钟【二维树状数组/">BZOJ 3132 上帝造题的七分钟【二维树状数组】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/26/HDU-5895-Mathematician-QSC【矩阵快速幂-数论】/">HDU 5895 Mathematician QSC【矩阵快速幂+数论】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/24/HDU-5446-Unknown-Treasure【Lucas-中国剩余定理】/">HDU 5446 Unknown Treasure【Lucas+中国剩余定理】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/HDU-5894-hannnnah-j’s-Biological-Test【组合数学】/">HDU 5894 hannnnah_j’s Biological Test【组合数学】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/Codeforces-665F-Four-Divisors/">Codeforces 665F Four Divisors【数论】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/HDU-5900-QSC-and-Master【区间dp】/">HDU 5900 QSC and Master【区间dp】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/HDU-5898-odd-even-number【数位dp】/">HDU 5898 odd-even number【数位dp】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/HDU-5893-List-wants-to-travel【树链剖分】/">HDU 5893 List wants to travel【树链剖分】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/17/HDU-5889-Barricade【BFS-最小割】/">HDU 5889 Barricade【BFS + 最小割】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/16/POJ-1066-Treasure-Hunt【线段交】/">POJ 1066 Treasure Hunt【线段交】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/16/HDU-3395-Special-Fish【KM-or-费用流】/">HDU 3395 Special Fish【KM or 费用流】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/14/读书笔记/">读书笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/14/POJ-3694-Network【LCA-并查集】/">POJ 3694 Network【LCA + 并查集】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/14/HDU-3671-Boonie-and-Clyde【无向图割点】/">HDU 3671 Boonie and Clyde【无向图割点】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/12/写在前面/">写在前面</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/SCUACM-2016集训-7-22【15-20】/">SCUACM 2016集训 7.22【16/20】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/SCUACM-2016集训-7-15【14-19】/">SCUACM 2016集训 7.15【14/19】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/SCUACM-2016集训-7-13【15-18】/">SCUACM 2016集训 7.13【16/18】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/SCUACM-2016集训-7-11/">SCUACM 2016集训 7.11【7/11】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/SCUACM-2016集训-7-8【11-16】/">SCUACM 2016集训 7.8【13/16】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/SCUACM-2016集训-7-6【16-20】/">SCUACM 2016集训 7.6【17/20】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/SCUACM-2016集训-7-4【15-17】/">SCUACM 2016集训 7.4【AK】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/Codeforces-266D-BerDonalds【图绝对中心】/">Codeforces 266D BerDonalds【图绝对中心】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/Codeforces-681E-Runaway-to-a-Shadow【计算几何】/">Codeforces 681E Runaway to a Shadow【计算几何】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/07/Codeforces-645E-Intellectual-Inquiry【dp，构造】/">Codeforces 645E Intellectual Inquiry【dp，构造】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/05/To-do-list/">To-do list</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/30/HDU-5728-PowMod【欧拉函数】/">HDU 5728 PowMod【欧拉函数】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/30/BZOJ-3884-上帝与集合的正确用法【欧拉函数】/">BZOJ 3884 上帝与集合的正确用法【欧拉函数】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/HDU-5733-tetrahedron【几何公式】/">HDU 5733 tetrahedron【几何公式】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/HDU-5725-Game【思维，细节】/">HDU 5725 Game【思维，细节】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/HDU-5730-Shell-Necklace【CDQ分治-FFT】/">HDU 5730 Shell Necklace【CDQ分治+FFT】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/24/HDU-5829-Rikka-with-Subset【NTT】/">HDU 5829 Rikka with Subset【NTT】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/24/51nod-1028-大数乘法【FFT】/">51nod 1028 大数乘法【FFT】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/24/BZOJ-3527-ZJOI2014-力【FFT】/">BZOJ 3527 [ZJOI2014]力【FFT】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/23/HDU-5820-Lights【zkw线段树，扫描线】/">HDU 5820 Lights【zkw线段树，扫描线】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/23/Codeforces-52C-Circular-RMQ【zkw线段树】/">Codeforces 52C Circular RMQ【zkw线段树】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/HDU-1166-敌兵布阵【zkw线段树】/">HDU 1166 敌兵布阵【zkw线段树】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/HDU-5820-Lights【主席树，扫描线】/">HDU 5820 Lights【主席树，扫描线】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/21/HDU-5818-Joint-Stacks【优先级队列】/">HDU 5818 Joint Stacks【优先级队列】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/21/HDU-5812-Distance【数学】/">HDU 5812 Distance【数学】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/21/HDU-5819-Knights【概率dp】/">HDU 5819 Knights【概率dp】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/17/HDU-3537-Daizhenyang-s-Coin【翻硬币游戏】/">HDU 3537 Daizhenyang's Coin【翻硬币游戏】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/17/HDU-5811-Colosseo【竞赛图，拓扑排序】/">HDU 5811 Colosseo【竞赛图，拓扑排序】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/17/HDU-5823-color-II【状压dp】/">HDU 5823 color II【状压dp】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/HDU-5828-Rikka-with-Sequence【线段树】/">HDU 5828 Rikka with Sequence【线段树】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/HDU-5821-Ball【脑洞】/">HDU 5821 Ball【脑洞】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/HDU-5826-physics【物理】/">HDU 5826 physics【物理】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/HDU-5810-Balls-and-Boxes【期望，公式推导】/">HDU 5810 Balls and Boxes【期望，公式推导】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/HDU-5816-Hearthstone【概率dp】/">HDU 5816 Hearthstone【概率dp】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/Hello/">Hello</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/13/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 zhuyujiang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题 v3.5">Yelee</a><span> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 4;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+             post: ".article-entry a[href]", 
+            
+            
+            
+            
+            
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"yukizzz"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+  </div>
+</body>
+</html>
